@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                @*<h2>@ViewBag.Message</h2>*@
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>Lista błędów : </h3>
+<ol class="round">
+    <li class="one">
+        <h5>@Html.ActionLink("A1 - Injection ", "Kategorie", "Injection")</h5>
+        <br>
+    </li>
+    <li class="two">
+        <h5>@Html.ActionLink("A1 - Injection ORM", "Wyszukiwanie", "Injection")</h5>
+        <br/>
+    </li>
+
+    <li class="three">
+        <h5>@Html.ActionLink("A3 - Cross Site Scripting", "Index", "XSS")</h5>
+        <br/>
+    </li>
+
+    <li class="four">
+        <h5>@Html.ActionLink("A4 - Insecure Direct Object References", "Index", "Direct")</h5>
+        <br/>
+    </li>
+   
+</ol>

@@ -1,0 +1,45 @@
+﻿@using System.Collections.Specialized
+@using MVCApp
+@{
+    ViewBag.Title = "Bezpośrednie odnośniki do obiektów";
+}
+
+<h2>Direct Object Reference</h2>
+
+<hgroup class="title">
+    <h2>Zalogowałeś się jako: </h2>
+    <h2>@User.Identity.Name</h2>
+</hgroup>
+
+<p>
+    <button id="loadButton">Pokaż moje karty kredytowe </button>
+</p>
+<p id="loader" style="display: none;">Ładowanie danych...</p>
+
+<div id="CreditCards" style="display: none;">
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $("#loadButton").click(function () {
+            $('#CreditCards').empty();
+            $('#loader').fadeIn('slow');
+
+            $.get('Direct/KartyKredytowe?userName=@User.Identity.Name', function (data) {
+            // zaciemnienie odnośnika do obiektu
+            //$.get('Direct/KartyKredytowe?id=@User.Identity.Name.GetIndirectRef()', function (data) {
+
+                    $.each(data.CreditCards, function(i, card) {
+                        var content = '<p><label>Numer:</label> ' + card.Numer + ' <label>Data ważności: </label>';
+                        content += card.DataWaznosci + '</p>';
+                        content += '<br/>';
+                        $(content).appendTo("#CreditCards");
+                    });
+
+                    $('#CreditCards').delay(1000).fadeIn('slow');
+                    $('#loader').fadeOut('slow');
+                });
+            });
+    </script>
+}

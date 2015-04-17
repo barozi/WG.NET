@@ -1,0 +1,16 @@
+﻿@using MVCApp.Controllers
+@{
+    ViewBag.Title = "Wyszukiwanie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Wyszukiwanie</h2>
+
+<div >
+    @using (Html.BeginForm("KsiazkiSearchByTitle", "Injection", FormMethod.Post))
+    {
+        <label form="searchText">Podaj tytuł poszukiwanej książki</label>
+        <input type="search" name="searchText"/><br/>
+        <input type="submit" value="Szukaj"/>
+    }
+</div>

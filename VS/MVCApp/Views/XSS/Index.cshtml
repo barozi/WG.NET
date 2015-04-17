@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>XSS Demo</h2>
+<div>
+    @using (Html.BeginForm("Search", "XSS", FormMethod.Get))
+    {
+        <label form="searchText">Podaj tytuł poszukiwanej książki</label>
+        <input type="search" name="searchText" /><br />
+        <input type="submit" value="Szukaj" />
+    }
+</div>
