@@ -1,0 +1,6 @@
+INSERT INTO [dbo].[CreditCards] ([Id], [Numer], [DataWaznosci], [WlascicielId]) VALUES (1, CAST(1234876509871234 AS Decimal(16, 0)), N'2015-09-01', 1)
+INSERT INTO [dbo].[CreditCards] ([Id], [Numer], [DataWaznosci], [WlascicielId]) VALUES (2, CAST(2345098767894532 AS Decimal(16, 0)), N'2016-01-01', 1)
+INSERT INTO [dbo].[CreditCards] ([Id], [Numer], [DataWaznosci], [WlascicielId]) VALUES (3, CAST(6543908776587650 AS Decimal(16, 0)), N'2015-05-01', 1)
+INSERT INTO [dbo].[CreditCards] ([Id], [Numer], [DataWaznosci], [WlascicielId]) VALUES (4, CAST(7623876354329876 AS Decimal(16, 0)), N'2015-03-01', 2)
+INSERT INTO [dbo].[CreditCards] ([Id], [Numer], [DataWaznosci], [WlascicielId]) VALUES (5, CAST(2017820361946205 AS Decimal(16, 0)), N'2016-01-01', 2)
+INSERT INTO [dbo].[CreditCards] ([Id], [Numer], [DataWaznosci], [WlascicielId]) VALUES (6, CAST(9453650125936206 AS Decimal(16, 0)), N'2017-03-01', 3)
